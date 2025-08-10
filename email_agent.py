@@ -30,8 +30,8 @@ def send_email(subject: str, html_body: str) -> Dict[str, str]:
     """
     smtp_server = "smtp.gmail.com"   # or your SMTP server
     smtp_port = 587
-    sender_email = "dsdd0511@gmail.com"
-    receiver_email = "dsharma7_be22@thapar.edu"
+    sender_email = "<Your sender email with gmail password>"
+    receiver_email = "<Your receiver email>"
     sender_password = os.getenv("EMAIL_APP_PASSWORD")  # Use App Password for Gmail (or real SMTP password)
 
     # Create MIME message
@@ -63,4 +63,5 @@ email_agent = Agent(
     instructions=INSTRUCTIONS,
     tools=[send_email],
     model="gpt-4o-mini",
+
 )
